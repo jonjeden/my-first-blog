@@ -11,18 +11,15 @@
   </div>
 
     <div>
-      <h2><a href="/">My First Post</a></h2>
-      <p>The first time I decided to post...</p>
-      <p><i>Published 2018-04-23</i></p>
+      {% for post in posts %}
+        <div> <h2> <a href="/"> {{ post.title }} </a></h2>
+          <p> {{ post.text|linebreaksbr }} </p>
+          <p><i>Published: {{ post.published_date }}</i></p>
+        </div>
+      {% endfor %}
     </div>
 
-      <div>
-        <h2><a href="/">My Secondary Post</a></h2>
-        <p>The second time I decided to post...</p>
-        <p><i>Published 2018-04-24</i></p>
-      </div>
 </div>
-
 </body>
 
 </html>
